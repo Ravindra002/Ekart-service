@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    tools {
-          maven 'Maven3'
-          jdk 'jdk17'
-    }
+    // tools {
+    //       maven 'Maven3'
+    //       jdk 'jdk17'
+    // }
     environment {
         SCANNER_HOME = tools 'sonar-scanner'
     }
@@ -19,11 +19,11 @@ pipeline {
         //             env.PATH = "${jdkTool}/bin:${mavenTool}/bin:${env.PATH}"
         //         }
         // }
-        stage ('Checkout from SCM') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Ravindra002/Ekart-service.git'
-            }
-        }
+        // stage ('Checkout from SCM') {
+        //     steps {
+        //         git branch: 'main', url: 'https://github.com/Ravindra002/Ekart-service.git'
+        //     }
+        // }
         stage ('Compile') {
             steps {
                 sh 'mvn compile'
